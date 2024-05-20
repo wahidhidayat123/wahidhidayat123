@@ -1,54 +1,29 @@
-def print_personal_info(name, address, phone, email):
-    print("Personal Information:")
-    print(f"Name: {vawahid hidayatullah}")
-    print(f"Address: {address}")
-    print(f"Phone: {087718991271}")
-    print(f"Email: {vawahidhidayat72@gmail.com}")
+class Stack:
+    def __init__(self):
+        self.items = []
 
-def print_education(education):
-    print("\nEducation:")
-    for item in education:
-        print(f"- {item}")
+    def is_empty(self):
+        return self.items == []
 
-def print_experience(experience):
-    print("\nExperience:")
-    for item in experience:
-        print(f"- {item}")
+    def push(self, item):
+        self.items.append(item)
 
-def print_skills(skills):
-    print("\nSkills:")
-    for skill, level in skills.items():
-        print(f"- {skill}: {level}")
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            return "Laci sudah kosong"
 
-def main():
-    # Personal Information
-    name = "vawahid hidayatullah"
-    address = "ketejer"
-    phone = "087718991721"
-    email = "vawahidhidayat72@gmail.com"
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            return "Laci kosong"
 
-    # Education
-    education = [
-        "mahasiswa, stmik lombok, 2023-2024",
-        "fotograper, 2023-2024"
-    ]
-
-    # Experience
-    experience = [
-        "Mahasiswa STMIK LOMBOK",
-        "Data printing, ABC Corporation, 2014-2017"
-    ]
-
-    # Skills
-    skills = {
-        "Editor": "Expert"
-    }
-
-    # Print CV sections
-    print_personal_info(name, address, phone, email)
-    print_education(education)
-    print_experience(experience)
-    print_skills(skills)
-
-if __name__ == "__main__":
-    main()
+# Contoh penggunaan:
+stack = Stack()
+stack.push("File1")
+stack.push("File2")
+print("Isi laci:", stack.items)
+print("Berkas yang diambil:", stack.pop())
+print("Isi laci setelah diambil:", stack.items)
